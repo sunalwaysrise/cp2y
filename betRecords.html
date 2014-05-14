@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>购彩记录-彩票2元网触屏版手机站</title>
+<link type="text/css" rel="stylesheet" href="res/css/css.css"/>
+</head>
+<body>
+<div id="loading"><div><a></a></div></div>
+<header class="header">
+	<a class="GoIndex showBtn" onclick="cp2y.user.clear();" href="home.html">关闭</a>
+	<h2 id="title">购彩记录-<span>全部</span></h2>
+	<a id="userMore"></a>
+</header>
+<div id="userMoreDetail">
+	<a id="t0" onclick="cp2y.user.setPage(1);cp2y.user.log(0);cp2y.user.toggleMore();">全部</a>
+	<a id="t5" onclick="cp2y.user.setPage(1);cp2y.user.log(5);cp2y.user.toggleMore();">代购</a>
+	<a id="t3" onclick="cp2y.user.setPage(1);cp2y.user.log(3);cp2y.user.toggleMore();">合买发起</a>
+	<a id="t4" onclick="cp2y.user.setPage(1);cp2y.user.log(4);cp2y.user.toggleMore();">合买参与</a>
+	<a id="t1" onclick="cp2y.user.setPage(1);cp2y.user.log(1);cp2y.user.toggleMore();">追号发起</a>
+	<a id="t2" onclick="cp2y.user.setPage(1);cp2y.user.log(2);cp2y.user.toggleMore();">追号参与</a>
+	<a id="t6" onclick="cp2y.user.setPage(1);cp2y.user.log(6);cp2y.user.toggleMore();">中奖发起</a>
+	<a id="t7" onclick="cp2y.user.setPage(1);cp2y.user.log(7);cp2y.user.toggleMore();">中奖参与</a>
+</div>
+</div>
+<div id="userPartBox">
+	<div class="userPartBox3" id="capitalBox1"></div>
+	<div class="pages">
+		<a id="prev">上一页</a>
+		<div>
+			<span id="cur"></span>
+			<select id="selectPage"></select>
+		</div>
+		<a id="next">下一页</a>
+	</div>
+</div>
+<div id="MoreLocked"></div>
+<script src="res/js/zepto.min.js"></script>
+<script src="res/js/base.min.js"></script>
+<script src="res/js/log.min.js"></script>
+<script>cp2y.user.init();</script>
+</body>
+</html>

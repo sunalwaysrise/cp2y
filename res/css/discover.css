@@ -1,0 +1,25 @@
+.Brazil{margin:50px 10px 0 10px;background:rgb(15,177,247);height:80px;text-align:center;}
+.fixBottom4{}
+.fixBottom4 a{position:absolute;width:50%;height:40px;line-height:40px;top:0;background:#FDEECF;color:#F09F1A;}
+.fixBottom4 a.cur{background:#F09F1A;color:#fff;}
+.fixBottom4 a:nth-child(1){left:0;}
+.fixBottom4 a:nth-child(2){right:0;border-left:1px #fff solid;}
+.fixBottom5{}
+.fixBottom5 a{position:absolute;width:25%;top:0;border-left:1px #fff solid;background:#FDEECF;color:#F09F1A;}
+.fixBottom5 a:nth-child(1){left:0;border-left:none;background:#F09F1A;color:#fff;}
+.fixBottom5 a:nth-child(2){left:25%;}
+.fixBottom5 a:nth-child(3){left:50%;}
+.fixBottom5 a:nth-child(4){right:0;}
+
+.scoreList{padding:40px 0;}
+.scoreListUl{}
+.scoreListUl li{height:80px;border-bottom:1px #ddd solid;position:relative;}
+.scoreListUl1{width:80px;height:80px;float:left;border-right:1px #ddd solid;text-align:center;}
+.scoreListUl1 b{height:25px;line-height:25px;padding-top:10px;display:block;}
+.scoreListUl1 p{width:100%;height:20px;padding-top:10px;}
+.scoreListUl1 p span{width:50%;height:20px;text-align:center;float:left;font-size:12px;}
+.scoreListUl2{position:absolute;left:81px;top:0;bottom:0;right:0;text-align:center;}
+.scoreListUl2 div{width:100%;height:30px;padding-top:10px;}
+.scoreListUl2 div span{width:33%;height:30px;float:left;text-align:center;line-height:30px;color:#000;}
+.scoreListUl2 p{height:30px;line-height:30px;}
+.scoreListUl2 div span.y,.scoreListUl2 p{color:#E1A77F;}

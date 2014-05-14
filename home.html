@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>账户中心-彩票2元网触屏版手机站</title>
+<link type="text/css" rel="stylesheet" href="res/css/css.css"/>
+</head>
+<body>
+<div id="loading"><div><a></a></div></div>
+<header class="header">
+	<a class="GoIndex showBtn" href="index.html">大厅</a>
+	<h2>账户中心</h2>
+</header>
+<div class="userPartBox2 mt40">
+	<div class="userHeader"><a id="userHeader" href="ownInfo.html"></a></a></div>
+	<div class="balance" id="balance" onclick="cp2y.user.setbalance()">余额<span></span><div id="myScoreLoading"></div></div>
+	<div class="userPartBox2Nav">
+		<h2><a href="http://m.cp2y.com/recharge/index" target="_blank">充值</a></h2>
+		<h2><a href="withDraw.html">提款</a></h2>
+		<h2><a href="withDrawRecords.html">明细</a></h2>
+	</div>
+	<div class="history">
+		<h3>购彩记录</h3>
+		<div id="mySH"></div>
+	</div>
+	<div class="line3 pb40"><a href="/limit/user/betRecords">查看全部</a></div>
+	<div class="fixBottom" id="myScore"></div>
+</div>
+<script src="res/js/zepto.min.js"></script>
+<script src="res/js/base.min.js"></script>
+<script src="res/js/user.min.js"></script>
+<script>cp2y.user.home();</script>
+</body>
+</html>

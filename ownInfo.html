@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>个人信息-彩票2元网触屏版手机站</title>
+<link type="text/css" rel="stylesheet" href="res/css/css.css"/>
+</head>
+<body>
+<div id="loading"><div><a></a></div></div>
+<header class="header">
+	<a class="GoIndex showBtn" id="goStepO" href="home.html">关闭</a>
+	<a class="GoIndex" id="goStepA">关闭</a>
+	<h2 id="stepBA">个人信息</h2>
+	<h2 class="hide" id="stepBB">绑定证件</h2>
+	<h2 class="hide" id="stepBC">绑定手机</h2>
+	<h2 class="hide" id="stepBC2">重绑定手机号</h2>
+	<h2 class="hide" id="stepBD">修改密码</h2>
+	<h2 class="hide" id="stepBE">修改用户名</h2>
+</header>
+<div class="userPartBox4" id="stepA">
+	<div id="hasBinds"></div>
+	<div id="CC" class="userLin wbg mt12"><span>绑定手机</span><p id="mobile"></p></div>
+	<div id="DD" class="userLin wbg mt12"><span>修改密码</span><p></p></div>
+	<p class="userPartBox61">绑定修改，需联系客服<a href="tel:4006667575">400-666-7575</a></p>
+	<div class="fixBottom" onclick="cp2y.user.signOut()">退出账户</div>
+</div>
+<div class="userPartBox1" id="ss" style="display:none;">
+	<div id="userTip3"></div>
+	<div class="hide mt40" id='stepB'>
+		<input type="text" id="updataNick" placeholder="真实姓名" class="input4 mt40" />
+		<input type="text" id="updataId" placeholder="身份证号码" class="input4 nobt" />
+		<a id="recharge" onclick="cp2y.user.updataId()" class="btn1 mt10">确认</a>
+	</div>
+	<div class="hide mt40" id='stepC'>
+		<input type="text" id="phone" placeholder="绑定手机可免费定制中奖通知、找回密码" class="input4 mt40" />
+		<a id="recharge" onclick="cp2y.user.getVeri()" class="btn1 mt10">确认</a>
+	</div>
+	<div class="hide mt40" id='stepC2'>
+		<div class="yourNumber mt40">验证码已经发送到<span id="yourMobile"></span></div>
+		<p id="resendVeri"><span>60</span> 秒后重新发送</p>
+		<input type="text" id="veri" placeholder="请输入手机验证码" class="input4" />
+		<a onclick="cp2y.user.updataPhone()" class="btn1 mt10">提交验证码</a>
+	</div>
+	<div class="hide mt40" id='stepD'>
+		<input type="password" id="updataPassword1" placeholder="输入旧密码" class="input4 mt40" />
+		<input type="password" id="updataPassword2" placeholder="输入新密码" class="input4 mt10" />
+		<input type="password" id="updataPassword3" placeholder="确认新密码" class="input4 nobt" />
+		<a id="recharge" onclick="cp2y.user.updataPassword()" class="btn1 mt10">确认</a>
+	</div>
+	<div class="hide mt40" id='stepE'>
+		<input type="text" id="updataUsername" placeholder="输入用户名" class="input4 mt40" />
+		<a id="recharge" onclick="cp2y.user.updataUsername()" class="btn1 mt10">确认</a>
+	</div>
+</div>
+<script src="res/js/zepto.min.js"></script>
+<script src="res/js/base.min.js"></script>
+<script src="res/js/user.min.js"></script>
+<script>
+cp2y.user.detail();
+var dom={
+	ss:$("#ss"),a1:$('#stepBA'),a2:$('#stepA'),b1:$('#stepBB'),b2:$('#stepB'),c1:$('#stepBC'),c2:$('#stepC'),d1:$('#stepBD'),d2:$('#stepD'),
+	B1:$('#goStepO'),B2:$('#goStepA'),c21:$('#stepBC2'),c22:$('#stepC2'),e1:$('#stepBE'),e2:$('#stepE'),
+},step={
+	hide:function(){
+		dom.ss.hide(),dom.a1.hide();dom.a2.hide();dom.b1.hide();dom.b2.hide();dom.c1.hide();dom.c2.hide();dom.e1.hide();dom.e2.hide();
+		dom.d1.hide();dom.d2.hide();dom.B1.show();dom.B2.hide();dom.c21.hide();dom.c22.hide();
+	},
+	s1:function(){
+		this.hide();dom.B1.show();
+		dom.a1.show();dom.a2.show();},
+	s2:function(){
+		this.hide();dom.B2.show();
+		dom.ss.show();dom.b1.show();dom.b2.show();},
+	s3:function(){
+		this.hide();dom.B2.show();
+		dom.ss.show();dom.c1.show();dom.c2.show();},
+	s4:function(){
+		this.hide();dom.B2.show();
+		dom.ss.show();dom.d1.show();dom.d2.show();},
+	s31:function(){
+		this.hide();dom.B2.show();
+		dom.ss.show();dom.B2.show();dom.c21.show();dom.c22.show();},
+	s5:function(){
+		this.hide();dom.B2.show();
+		dom.ss.show();dom.e1.show();dom.e2.show();
+	}
+};
+dom.B2.click(function(){step.s1();cp2y.dialog.clearTip();});
+$('#CC').click(function(){step.s3()});
+$('#DD').click(function(){step.s4()});
+$.ajax({
+	url:WebAppUrl.HOME_APP_URL+'/activity/isshowact',
+	success:function(data){
+		if(data.isShow){
+			var html='<div class="userPartBox1" id="isshowact"><a onclick="cp2y.user.getCj()" class="btn1 mt10">完善资料，领取3元彩金</a></div>';
+			$('.userPartBox61').before(html);
+		}
+	}
+});
+cp2y.user.getCj=function(){
+	$.ajax({
+		url:WebAppUrl.HOME_APP_URL+'/activity/zhucesongmoney',
+		beforeSend:function(){cp2y.dialog.loading();},
+		success:function(data){
+			cp2y.dialog.clearLoading();
+			if(data.flag==1){
+				$('#isshowact').remove();
+			}
+			return cp2y.dialog.alert(data.message);
+		},
+		error:function(){cp2y.dialog.clearLoading();}
+	});
+}
+</script>
+</body>
+</html>

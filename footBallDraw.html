@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>开奖历史-彩票2元网触屏版手机站</title>
+<link type="text/css" rel="stylesheet" href="res/css/css.css"/>
+</head>
+<body>
+<div id="loading"><div><a></a></div></div>
+<div id="Warp">
+	<header class="header">
+		<a class="GoIndex showBtn" onclick="cp2y.draw.clear();" href="/draw/">关闭</a>
+		<h2 id="drawTitle"></h2>
+		<a class="more" onclick="cp2y.draw.openSelectData();" style="display:block">往期查询</a>
+	</header>
+	<div id="userPartBox">
+	<div id="drawContentBox" class="pb40"></div>
+	</div>
+</div>
+<div id="SelectData" style="display:none">
+	<div class="userPartBox1" id="InputBoxContent">
+		<h2>选择查询日期</h2>
+		<div class="selectData">
+			<div class="dataYM">
+				<p class="dataY"><span id="dataY"></span>年
+					<select id="selectY"></select>
+				</p>
+				<p class="dataM"><span id="dataM"></span>月
+					<select id="selectM"></select>
+				</p>
+			</div>
+			<div class="dataWeek"><a>周一</a><a>周二</a><a>周三</a><a>周四</a><a>周五</a><a>周六</a><a>周日</a></div>
+			<div id="selectData"></div>
+		</div>
+		<div class="totalMsg">
+			<div class="tools1 isbtn" onclick="cp2y.draw.closeSelectData();">取消查询</div>
+			<span id="showSelectData"></span>
+			<a class="toolsBtn" onclick="cp2y.draw.setDate();">查询</a>
+		</div>
+	</div>
+</div>
+<script src="res/js/zepto.min.js"></script>
+<script src="res/js/base.min.js"></script>
+<script src="res/js/draw.min.js"></script>
+<script>
+cp2y.draw.bt=10059;
+cp2y.draw.jcList();
+cp2y.draw.jcListInit();
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>开奖详情-彩票2元网触屏版手机站</title>
+<link type="text/css" rel="stylesheet" href="res/css/css.css"/>
+</head>
+<body>
+<div id="loading"><div><a></a></div></div>
+<header class="header">
+	<a class="GoIndex showBtn" id="back">关闭</a>
+	<h2 id="drawTitle"></h2>
+</header>
+<div id="userPartBox"><div id="drawContentBox"></div></div>
+<script src="res/js/zepto.min.js"></script>
+<script src="res/js/base.min.js"></script>
+<script src="res/js/draw.min.js"></script>
+<script>
+$("#back").attr({"href":"drawIndex.html#lottery="+cp2y.util.getArgs('lottery')});
+cp2y.draw.detail(cp2y.util.getArgs('lottery'),cp2y.util.getArgs('issue'));
+</script>
+</body>
+</html>

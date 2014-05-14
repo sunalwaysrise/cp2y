@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>彩票2元网  WP8</title>
+<link type="text/css" rel="stylesheet" href="res/css/css.css"/>
+</head>
+<body>
+<div id="loading"><div><a></a></div></div>
+<section id="mainSection" class="jc">
+	<header class="header">
+		<div id="headerS1" class="hide">
+			<a href="index.html" class="GoIndex">大厅</a>
+			<h2 id="Title" onclick="cp2y.buy.toggleMore();"></h2>
+			<a id="More" class="more" onclick="cp2y.buy.toggleMore();"></a>
+		</div>
+		<div id="headerS2" class="hide">
+			<a onclick="cp2y.buy.step1();" class="GoIndex">关闭</a>
+			<h2 id="Title2" onclick="cp2y.buy.editScheme();"></h2>
+			<a id="EditBets" class="more" onclick="cp2y.buy.editScheme();">编辑</a>
+		</div>
+	</header>
+	<div id="MoreDetail">
+		<div id="MoreLists">
+			<div class="MoreLists" id="changePlayType" style="display:block"></div>
+		</div>
+	</div>
+    <div id="MoreLocked" onclick="cp2y.buy.toggleMore();"></div>
+	<div id="MainStep1">
+		<div class="tip tip2"><a id="jcTime"></a><b class="fr">投注球队：<span id="jcTo"></span></b></div>
+		<ul id="choose" class="wordCup"></ul>
+		<section class="tools">
+			<div class="tools2" id="tools2">已选<a id="curBets">0</a>注，共<a id="curMoney">0</a>元</div>
+			<a onclick="cp2y.buy.addContent();" class="toolsBtn">确认</a>
+		</section>
+	</div>
+	<div id="MainStep2">
+		<ul id="betList" class=""></ul>
+		<div class="totalMsg totalMsg3">
+			<div class="Center jcSetMul">
+				<input onblur="cp2y.buy.setMul(this)" type="number" id="mul" step="1" min="1" max="9999" value="1"/>
+				<span>倍</span>
+			</div>
+		</div>
+		<div class="totalMsg">
+			<div class="tools2"><a id="bets">0</a>注，<a id="money">0</a>元</div>
+			<a onclick="cp2y.buy.pay();" class="totalMsg2">付款</a>
+			<div class="payBox" id="payBox"></div>
+			<div class="buyBox" id="buyBox"></div>
+		</div>
+	</div>
+</section>
+<div id="userUtil"></div>
+<script src="res/js/zepto.min.js"></script>
+<script src="res/js/base.min.js"></script>
+<script src="res/js/userUtil.min.js"></script>
+<script src="res/js/jcBuyCGY.min.js"></script>
+<script src="res/js/play/10059cgy.js"></script>
+<script>cp2y.buy.init();</script>
+</body></html>

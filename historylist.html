@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>开奖历史-彩票2元网触屏版手机站</title>
+<link type="text/css" rel="stylesheet" href="res/css/css.css"/>
+</head>
+<body>
+<div id="loading"><div><a></a></div></div>
+<header class="header">
+	<a class="GoIndex showBtn" onclick="cp2y.draw.clear();" href="/draw/">关闭</a>
+	<h2 id="drawTitle"></h2>
+</header>
+<div id="userPartBox">
+<div id="drawContentBox"></div>
+<div class="pages">
+	<a id="prev">上一页</a>
+	<div>
+		<span id="cur"></span>
+		<select id="selectPage"></select>
+	</div>
+	<a id="next">下一页</a>
+</div>
+</div>
+<script src="res/js/zepto.min.js"></script>
+<script src="res/js/base.min.js"></script>
+<script src="res/js/draw.min.js"></script>
+<script>
+var _bt=cp2y.util.getArgs('lottery');
+if(!_bt){_bt=10064;}
+cp2y.draw.bt=_bt;
+cp2y.draw.list();
+</script>
+</body>
+</html>

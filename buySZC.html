@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>彩票2元网触屏版手机站</title>
+<link type="text/css" rel="stylesheet" href="res/css/css.css"/>
+</head>
+<body>
+<div id="loading"><div><a></a></div></div>
+<div id="Warp">
+<header class="header">
+	<h2 id="Title"><span>双色球</span>-普通</h2>
+	<h2 id="QRTi" style="display: none;"><span>双色球</span>-投注</h2>
+	<h2 id="ZhihaoTi" style="display:none;">普通追号</h2>
+	<a id="GoIndex" class="GoIndex showBtn" href="index.html">大厅</a>
+	<a id="GoIndex1" class="GoIndex"onclick="cp2y.buy.step2();">关闭</a>
+	<a id="GoSelectArea" class="GoIndex">关闭</a>
+	<a id="GoMyBets" class="GoIndex">关闭</a>
+	<a id="More" class="more" style="display: inline;"></a>
+	<a id="EditBets" class="more" style="display: none;">编辑</a>
+	<a id="Zhuihao" class="more" style="display: none;">高级追号</a>
+</header>
+<div id="MoreDetail" style="display: none;">
+	<div id="MoreNav">
+		<a id="getTz" class="cur">投注</a>
+		<a id="getKj" class="">开奖</a>
+		<a id="getWf" class="">玩法</a>
+	</div>
+	<div id="MoreLists">
+		<div class="MoreLists" id="changePlayType" style="display: block;"></div>
+		<ul class="MoreLists" id="getKjC"></ul>
+		<div class="MoreLists" id="getWfC"></div>
+	</div>
+</div>
+<div id="MoreLocked"></div>
+<div id="MainStep1" style="display: block;">
+	<div id="countDown">距<span id="curIssue"></span>期截止：<time id="curCountDown"></time></div>
+	<section id="choose"></section>
+	<section class="tools">
+		<div class="tools1">
+			<a onclick="cp2y.buy.clear()" class="isbtn" id="clear" style="display: none;">清除选号</a>
+			<a onclick="cp2y.buy.setClear(2)" class="isbtn" id="Randoms" style="display: inline;">快速机选</a>
+			<a onclick="cp2y.buy.setClear(1)" class="isbtn" id="cancelRandoms" style="display: none;">取消机选</a>
+		</div>
+		<div class="tools2" id="tools2">已选<a id="curBets">0</a>注，共<a id="curMoney">0</a>元</div>
+		<a onclick="cp2y.buy.addContent();" class="toolsBtn" id="addContent">确认</a>
+		<div id="RandomList" style="display: none;">
+		<a onclick="cp2y.buy.random(1);">1注</a>
+		<a onclick="cp2y.buy.random(2);">2注</a>
+		<a onclick="cp2y.buy.random(3);">3注</a>
+		<a onclick="cp2y.buy.random(5);">5注</a>
+		<a onclick="cp2y.buy.random(10);">10注</a></div>
+	</section>
+</div>
+<div id="MainStep2" style="display: none;">
+	<div class="betListsTitle"><a onclick="cp2y.buy.step11();">继续添加</a><a onclick="cp2y.buy.needStop();">机选一注</a></div>
+	<ul id="betList"></ul>
+	<div class="totalMsg">
+		<div id="totalMsgTop" class="totalMsgTop">
+			<p onclick='cp2y.issues.setIssueSimpleBox();'><span id="issues">1</span><b>期</b></p>
+			<p onclick='cp2y.issues.setMulSimpleBox();'><span id="muls">1</span><b>倍</b></p>
+		</div>
+		<div class="tools2"><a id="bets">0</a>注，<a id="money">0</a>元</div>
+		<a onclick="cp2y.buy.pay();" class="totalMsg2">付款</a>
+		<div class="payBox" id="payBox"></div>
+		<div class="buyBox" id="buyBox"></div>
+	</div>
+</div>
+<div id="MainStep3" style="display: none;"></div>
+</div>
+<div id="userUtil"></div>
+<div id="InputBox">
+	<header class="header">
+		<a class="GoIndex" style="display:block" onclick="cp2y.input.closeBox();">关闭</a>
+		<h2 id="InputBoxTitle"></h2>
+	</header>
+	<div class="userPartBox1" id="InputBoxContent"></div>
+</div>
+<script src="res/js/zepto.min.js"></script>
+<script src="res/js/base.min.js"></script>
+<script src="res/js/userUtil.min.js"></script>
+<script src="res/js/buy.min.js"></script>
+<script>
+var czc={bt:cp2y.util.getArgs('lottery'),a:cp2y.util.getArgs('type')};
+if(!czc.bt){czc.bt=10032;}
+if(!czc.a){czc.a='a0';}
+$.getScript('res/js/play/'+czc.bt+'.js',function(){
+	cp2y.buy.init(czc.a);
+});
+</script>
+</body>
+</html>
