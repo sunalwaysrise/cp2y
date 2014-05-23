@@ -94,9 +94,9 @@ cp2y.mainPage=function(){
 		success:function(data){
 			cp2y.dialog.clearLoading();
 			var i=0,len=data.list.length,html=[],hot="a0",tmp='';
-			if(sessionStorage.getItem('isShowBanner')!=1){
-				html.push('<div class="banner" id="banner"></div>');
-			}
+//			if(sessionStorage.getItem('isShowBanner')!=1){
+//				html.push('<div class="banner" id="banner"></div>');
+//			}
 			for(i;i<len;i++){
 				tmp='';
 				switch(data.list[i].lotteryId){
@@ -182,9 +182,9 @@ cp2y.mainPage=function(){
 			html.push('</div></div></a>');
 			$("#mainPage").html(html.join(''));
 			window.scrollTo(0,0);
-			if(sessionStorage.getItem('isShowBanner')!=1){
-				cp2y.loadBanner();
-			}
+//			if(sessionStorage.getItem('isShowBanner')!=1){
+//				cp2y.loadBanner();
+//			}
 		}
 	});
 	$.get(WebAppUrl.HOME_APP_URL+"/user/checkLogin",function(isLogin){
