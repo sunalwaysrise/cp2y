@@ -187,7 +187,7 @@ cp2y.draw={
 						html.push('</table>');
 						html.push('</li>');
 					}
-					html.push('</ul><a class="fixBottom" href="buyJCZQ.html#lottery=10059&type=a0">购买竞彩足球</a>');
+					//html.push('</ul><a class="fixBottom" href="buyJCZQ.html#lottery=10059&type=a0">购买竞彩足球</a>');
 				}
 				dom.c.html(html.join(''));
 				$(".tip2").click(function () {

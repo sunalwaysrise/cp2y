@@ -98,6 +98,7 @@ cp2y.mainPage=function(){
 //				html.push('<div class="banner" id="banner"></div>');
 //			}
 			for(i;i<len;i++){
+				if(data.list[i].lotteryId!=10059){
 				tmp='';
 				switch(data.list[i].lotteryId){
 					case 10032:
@@ -149,20 +150,22 @@ cp2y.mainPage=function(){
 						hot='a0';
 						break;
 				}
-				if(data.list[i].lotteryId==10059){
-					html.push('<a href="buyJCZQ.html#lottery='+data.list[i].lotteryId+'&type='+hot+'"><div class="playType">');
-				}else{
-					html.push('<a href="buySZC.html#lottery='+data.list[i].lotteryId+'&type='+hot+'"><div class="playType">');
+				if(data.list[i].isStop==0){
+					if(data.list[i].lotteryId==10059){
+						html.push('<a href="buyJCZQ.html#lottery='+data.list[i].lotteryId+'&type='+hot+'"><div class="playType">');
+					}else{
+						html.push('<a href="buySZC.html#lottery='+data.list[i].lotteryId+'&type='+hot+'"><div class="playType">');
+					}
+					html.push('<div class="img2"><img src="'+WebAppUrl.Icon+data.list[i].lotteryId+'.png" /><span>'+data.list[i].lotteryName+'</span></div><div class="playTypeArea">');
+					html.push('<p class="p11">'+data.list[i].message);
+					if(data.list[i].event){
+						html.push('<i class="hot">'+data.list[i].event+'</i>');
+					}
+					html.push('</p>');
+					html.push(tmp);
+					html.push('</div></div></a>');
+					}
 				}
-				
-				html.push('<div class="img2"><img src="'+WebAppUrl.Icon+data.list[i].lotteryId+'.png" /><span>'+data.list[i].lotteryName+'</span></div><div class="playTypeArea">');
-				html.push('<p class="p11">'+data.list[i].message);
-				if(data.list[i].event){
-					html.push('<i class="hot">'+data.list[i].event+'</i>');
-				}
-				html.push('</p>');
-				html.push(tmp);
-				html.push('</div></div></a>');
 			}
 			html.push('<a href="buyGJJC.html"><div class="playType">');
 			html.push('<div class="img2">');
@@ -172,14 +175,14 @@ cp2y.mainPage=function(){
 			html.push('<p class="p11">冠军竞猜</p>');
 			html.push('<p>世界杯冠军、欧冠杯冠军</p>');
 			html.push('</div></div></a>');
-			html.push('<a href="http://m.cp2y.com" target="_blank"><div class="playType">');
-			html.push('<div class="img2">');
-			html.push('<img src="'+WebAppUrl.Icon+'more.png" style="margin-top:13px" />');
-			html.push('</div>');
-			html.push('<div class="playTypeArea">');
-			html.push('<p class="p11">更多彩种</p>');
-			html.push('<p>老时时彩、七乐彩、幸运赛车...</p>');
-			html.push('</div></div></a>');
+			// html.push('<a href="http://m.cp2y.com" target="_blank"><div class="playType">');
+			// html.push('<div class="img2">');
+			// html.push('<img src="'+WebAppUrl.Icon+'more.png" style="margin-top:13px" />');
+			// html.push('</div>');
+			// html.push('<div class="playTypeArea">');
+			// html.push('<p class="p11">更多彩种</p>');
+			// html.push('<p>老时时彩、七乐彩、幸运赛车...</p>');
+			// html.push('</div></div></a>');
 			$("#mainPage").html(html.join(''));
 			window.scrollTo(0,0);
 //			if(sessionStorage.getItem('isShowBanner')!=1){

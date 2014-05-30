@@ -921,7 +921,8 @@ cp2y.buy={
 					return cp2y.dialog.confirm("余额不足，去充值？", function () {
 						cp2y.dialog.closeConfirm();
 						//cp2y.quick.user.rechargeBox();
-						location.href = WebAppUrl.HOME_APP_URL + '/recharge/index';
+						//location.href = WebAppUrl.HOME_APP_URL + '/recharge/index';
+						window.open( WebAppUrl.HOME_APP_URL + '/recharge/index', "_system");
 					});
 				} else if (data.flag == 1) {
 					location.href = WebAppUrl.HOME_APP_URL + '/lottery/detail#scheme=' + data.schemeId;

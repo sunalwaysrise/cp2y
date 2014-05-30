@@ -45,7 +45,10 @@ cp2y.user={
 			success:function(data){
 				cp2y.dialog.clearLoading();
 				if(data.flag==1){
-					document.location.href=data.payUrl;
+					//document.location.href=data.payUrl;
+					
+					window.open( data.payUrl, "_system");
+					navigator.app.loadUrl(url,{ openExternal:true }); 
 				}else{
 					cp2y.dialog.tip(data.message);
 					return cp2y.quick.user.signInBox();

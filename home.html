@@ -17,7 +17,7 @@
 	<div class="userHeader"><a id="userHeader" href="ownInfo.html"></a></a></div>
 	<div class="balance" id="balance" onclick="cp2y.user.setbalance()">余额<span></span><div id="myScoreLoading"></div></div>
 	<div class="userPartBox2Nav">
-		<h2><a href="http://m.cp2y.com/recharge/index" target="_blank">充值</a></h2>
+		<h2><a id="gotoCharge">充值</a></h2>
 		<h2><a href="withDraw.html">提款</a></h2>
 		<h2><a href="withDrawRecords.html">明细</a></h2>
 	</div>
@@ -31,6 +31,11 @@
 <script src="res/js/zepto.min.js"></script>
 <script src="res/js/base.min.js"></script>
 <script src="res/js/user.min.js"></script>
-<script>cp2y.user.home();</script>
+<script>cp2y.user.home();
+$("#gotoCharge").click(function(){
+	//window.open('http://m.cp2y.com/recharge/index', "_system");
+	navigator.app.loadUrl('http://m.cp2y.com/recharge/index',{ openExternal:true });
+});
+</script>
 </body>
 </html>
